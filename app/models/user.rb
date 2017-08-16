@@ -7,4 +7,10 @@ class User < ApplicationRecord
             length: {maximum: 255},
             format: {with: VALID_EMAIL_REGEX},
             uniqueness: {case_sensitive: false}
+
+  before_save {
+    self.email = email.downcase
+    # or
+    # email.downcase!
+  }
 end
