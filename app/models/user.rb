@@ -13,4 +13,6 @@ class User < ApplicationRecord
     # or
     # email.downcase!
   }
+
+  has_secure_password
 end
